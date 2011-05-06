@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# scup 0.1 - a simple scp uploader
+# scup 0.2 - a simple scp uploader
 # 04.05.2011 - Tobias Birmili
 #
 # This script uploads screenshots via scp to a server and puts the
@@ -81,7 +81,7 @@ if [[ ! -n $1 ]]; then
    	mv "$SCREENSHOT" "$TEMPDIR/backup/"
    done; 
 else
-   cp $1 "$TEMPDIR/queue/"
+   cp "$1" "$TEMPDIR/queue/"
 fi
 
 
@@ -94,7 +94,7 @@ done
 
 # upload the files with scp
 echo "[scup] uploading file"
-scp $TEMPDIR/queue/* $USERNAME@$HOSTNAME:$DIRECTORY || exit $?
+scp -r $TEMPDIR/queue/. $USERNAME@$HOSTNAME:$DIRECTORY || exit $?
 
 # remove the uploaded files on local disc
 echo "[scup] emptying queue"
