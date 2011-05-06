@@ -21,6 +21,11 @@ a screenshot to your server and copy the link to the clipboard.
 No more failed IM file transfers. As a bonus it can not only automatically
 upload all the screenshots in a location but every file you tell it to upload.
 
+### webrender
+
+You need a full-length PNG of a website? Use this. This script runs in [phantom.js](http://www.phantomjs.org/)
+which uses WebKit. So everything will look awesome.
+
 ## License
 
 Do what you want with them. Just give credit somewhere. Think of a BSD License.
