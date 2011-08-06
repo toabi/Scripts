@@ -101,10 +101,11 @@ echo "[scup] emptying queue"
 rm $TEMPDIR/queue/*
 
 # copy string of files into clipboard if in osx
-if [[ $OSTYPE = "darwin10.0" ]]; then
+if [[ $OSTYPE == darwin* ]]; then
    echo "[scup] copying URL to clipboard"
    echo "$FILES"|pbcopy
 fi
 
 # print URLs of uploaded files for convenience
 echo -n "$FILES"
+
